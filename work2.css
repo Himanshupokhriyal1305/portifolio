@@ -1,0 +1,340 @@
+
+.navbaricons{
+    width: 25px;
+  }
+  /* six bottom */
+  .sixbottom{
+    border-radius: 6px ;
+    border: 1px solid gray;
+    width: 10px ;
+    height: 31px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  @media (max-width: 399px) {
+    .sixbottom{
+      border-radius: 6px ;
+      border: 1px solid gray;
+      font-size: x-small;
+    padding: 10px;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+    }
+    
+
+  }
+   /* six bottom */
+
+   svg {
+    width: 25px;
+  }
+  /* Initial state: keep the navbar hidden on mobile screens */
+  @media (max-width: 992px) {
+    .navbar-collapse {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      height: 100%;
+      width: 250px;
+      background-color: #fff;
+      transition: left 0.3s ease-in-out;
+      z-index: 9999;
+    }
+    /* When the navbar is open */
+    .navbar-collapse.show {
+      left: 45px;
+    }
+    .collapsee{
+      display: flex;
+    }
+    .displaycouman{
+      display: inline-grid;
+    }
+    .moones{
+      border: none;
+      background-color: #fff;
+      display: flex;
+    }
+    .profile-card{
+      margin-top: 20px;
+    }
+  }
+  @media (min-width: 992px) {
+  .displanonoe{
+    display: none;
+  }
+  .displaycouman{
+    display: flex;
+  }
+  .btn-dark{
+  white-space: nowrap;
+  }
+  .imagetoted{
+    font-size: large;
+  }
+  .moones{
+    border: none;
+    background-color: #fff;
+  }
+  .paragraph{
+    font-size: 14px !important;
+  }
+  .lastcard{
+    height: 100% !important;
+  }
+  }
+  .towgap{
+    gap: 15px;
+}
+.mainborder{
+    border-radius: 1rem;
+  
+  }
+.navbarlogo{
+    width: 7rem;
+    background-color: transparent !important;
+      }
+.air:hover {
+    background-color: rgba(128, 128, 128, 0.47);
+    border-radius: 10px;
+    color: black;
+  }
+ /* Aashish Bhagwat 👋 open meida qurey */
+  .p-c {
+    position: sticky;
+    height:33rem;
+    top: 0px;
+    overflow: hidden;
+}
+
+/* .position-relative {
+    position: relative;
+} */
+@media  (max-width: 992px) {
+  .p-c{
+    height: auto !important;
+  }
+}
+  /* Aashish Bhagwat 👋 close meida qurey */
+.hover-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    background-color: gray;
+    border-radius: 50%;
+}
+
+.hello:hover .hover-icon {
+    opacity: 1;
+}
+
+.svg-icon {
+    width: 2rem;
+    height: 2rem;
+    stroke: white; /* Change this to the color you want */
+}
+
+.image-to-open {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.hello:hover .image-to-open {
+    transform: scale(1.05);
+}
+.navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1;
+}
+/* Styling for pagination buttons */
+.pagination-container {
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.pagination-btn {
+    height: 40px;
+}
+
+/* Responsive design for phone screens */
+.towclass{
+    white-space: nowrap;
+    font-size: small;
+}
+@media  (max-width: 417px) {
+    .towclass{
+        white-space: nowrap;
+        font-size: 12px;
+    }
+
+}
+.towclases{
+  display: flex;
+}
+@media  (max-width: 396px) {
+  .towclases{
+    display: flex;
+    font-size: xx-small;
+  }
+
+}
+
+@media  (max-width: 535px) {
+  .texter{
+      
+      font-size: smaller ;
+  }
+  .paragraph{
+    font-size: smaller ;
+  }
+  .lastsvg{
+    width: 15px;
+  }
+  .texterbtn{
+    font-size: x-small;
+  }
+
+}
+@media  (max-width: 435px) {
+.texter{
+  font-size: small;
+}
+}
+
+/* Default text color when not hovered */
+.marquee-text .text {
+  color:grey;
+  font-weight: 600;
+}
+
+/* Text color changes to red when hovered */
+.marquee-text .text:hover {
+  color:black;
+  cursor: pointer;
+  font-weight: 600;
+}
+/* Text color changes to red when hovered close*/
+
+/* check out  css  heading */
+.headincheck{
+  font-size: x-large;
+  font-weight: 800;
+}
+@media  (max-width: 485px) {
+  .headincheck{
+    font-size:larger;
+    font-weight: 800;
+  }
+
+}
+.prime{
+  color: rgb(135 126 255)
+  ;
+  opacity: 1;
+}
+.sizebg{
+  width: 200px;
+  background-color:transparent;
+}
+
+/* Default light mode */
+.navbar ,.backgroundcolors {
+  background-color: white;
+  color: black;
+}
+
+.navbar a {
+  color: black;
+}
+
+button#darkModeToggle {
+  background-color: transparent;
+  border: none;
+  color: black;
+}
+
+/* Dark mode styles */
+.dark-mode .navbar {
+  background-color: #191923;
+  color: white;
+
+}
+
+.dark-mode .navbar a {
+  color: white !important;
+}
+
+.dark-mode #darkModeIcon {
+  color: yellow;
+}
+
+button#darkModeToggle .fa-moon {
+  color: white;
+}
+
+.dark-mode .fa-moon {
+  display: none;
+}
+
+.dark-mode .fa-sun {
+  display: inline-block;
+  color: yellow !important;
+}
+.sun{
+  color: #191923 !important;
+
+}
+/* Dark mode styles for card */
+.body.dark-mode .profile-card  {
+  background-color: #191923 ;
+  color: white;
+}
+
+/* Dark mode style for heading */
+.dark-mode .profile-card .heading {
+  color: white;
+}
+
+/* Optional: Style paragraph and buttons for dark mode */
+.dark-mode .profile-card .paragraph {
+  color: rgba(255, 255, 255, 0.785);
+}
+.dark-mode .profile-card .stongers {
+color: #fff;
+}
+
+.dark-mode .profile-card .btn,
+.dark-mode .profile-card .social-links button {
+  background-color: #191923; /* Dark gray background */
+  color: white;
+  border-color: #444; /* Border color for dark mode */
+}
+.dark-mode .social-links-icon   {
+background-color: #191923;
+color: rgb(100 116 139 );
+opacity: 1;
+}
+body.dark-mode{
+  background-color: #191923; /* Dark gray background */
+  color: white;
+  border-color: #444;
+
+}
+
+
