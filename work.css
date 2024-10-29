@@ -43,14 +43,14 @@
     top: 0;
     left: -100%;
     height: 100%;
-    width: 250px;
+    width: 350px;
    background-color: #fff;
     transition: left 0.3s ease-in-out;
     z-index: 9999;
   }
   /* When the navbar is open */
   .navbar-collapse.show {
-    left: 45px;
+   
   }
   .collapsee{
     display: flex;
@@ -363,6 +363,9 @@ border-color: #444;
 }
 .dark-mode .navbar-collapse{
   background-color: #191923 !important;
+}
+.navbar-nav{
+  width: min-content  ;
 }
 
 

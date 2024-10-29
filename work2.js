@@ -28,14 +28,16 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
-
   const toggleButton = document.getElementById('darkModeToggle');
   const icon = document.getElementById('darkModeIcon');
+  const navbar = document.getElementById('navbarNav'); // Change this to match the collapse navbar ID
+  const closeButton = document.querySelector('.fa-circle-xmark'); // Select the circle mark icon
   
-  toggleButton.addEventListener('click', function () {
+  // Toggle dark mode and icon on button click
+  toggleButton.addEventListener('click', function (event) {
       document.body.classList.toggle('dark-mode');
-      
-      // Change the icon from moon to sun and vice versa
+  
+      // Toggle icon between moon and sun
       if (document.body.classList.contains('dark-mode')) {
           icon.classList.remove('fa-moon');
           icon.classList.add('fa-sun');
@@ -43,7 +45,27 @@ document.addEventListener('DOMContentLoaded', function () {
           icon.classList.remove('fa-sun');
           icon.classList.add('fa-moon');
       }
+  
+      // Prevent this click event from propagating to the document
+      event.stopPropagation();
   });
   
+  // Close navbar when clicking outside of it
+  document.addEventListener('click', function (event) {
+      const isClickInsideNavbar = navbar.contains(event.target);
+      const isClickInsideToggle = toggleButton.contains(event.target);
+  
+      if (!isClickInsideNavbar && !isClickInsideToggle) {
+          navbar.classList.remove('show'); // Change this to 'show' to match Bootstrap's collapse class
+      }
+  });
+  
+  // Close navbar when clicking the circle mark icon
+  closeButton.addEventListener('click', function () {
+      navbar.classList.remove('show'); // Change this to 'show' to match Bootstrap's collapse class
+  });
+  
+  
     
-
+  
+  

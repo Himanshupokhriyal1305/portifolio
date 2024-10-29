@@ -173,14 +173,14 @@ video {
     background-color: #fff;
     left: -100%;
     height: 100%;
-    width: 250px;
+    width: 350px;
    
     transition: left 0.3s ease-in-out;
     z-index: 9999;
   }
   /* When the navbar is open */
   .navbar-collapse.show {
-    left: 45px;
+    left: 0px;
   }
   .collapsee{
     display: flex;
@@ -201,6 +201,10 @@ video {
 .displanonoe{
   display: none;
 }
+.mincss{
+  margin-left: -13px;
+  font-size: small;
+}
 .displaycouman{
   display: flex;
 }
@@ -216,7 +220,7 @@ white-space: nowrap;
 }
 
 .lastcard{
-  height: 100% !important;
+  height: 95% !important;
 }
 }
 .towgap{
@@ -283,9 +287,9 @@ white-space: nowrap;
 
 
 .sizebg{
-width: 200px;
-background-color:transparent;
-}
+  width: 200px;
+  background-color:transparent;
+  }
 
 /* Default light mode */
 
@@ -380,7 +384,7 @@ border-color: #444;
 }
 @media (max-width : 992px){
   .displaycouman{
-    margin-right: 152px ;
+    margin-right: 107px ;
   }
   .p-c{
     height: auto;
@@ -425,5 +429,18 @@ border-color: #444;
   width: 100%;
 }
 .lastcard {
-  height: auto;
+  height: 100px;
+}
+@media (max-width : 992px) {
+  .lastcard {
+    height: 270px;
+  }
+}
+.navbar-nav{
+  width: min-content  ;
+}
+@media (max-width: 992px) {
+  .displaycouman {
+      margin-right: 162px;
+  }
 }
