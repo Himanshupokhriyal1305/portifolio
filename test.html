@@ -1,136 +1,819 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Services Layout</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <title>Continuous Card Slider with Animation</title>
+  <link rel="stylesheet" href="service.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRU3HDb+g2b8tY5gt5FsX1l5bIxg7gUhD62hNJy5Q" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
   <style>
-    /* Custom styling */
-    body {
-      background-color: #E8EAF6;
-    }
+    /* CSS Styles */
+    /* * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    } */
 
-    .services-container {
-      padding: 2rem;
-    }
-
-    .service-card {
-      background-color: #F3F5FA;
-      border-radius: 15px;
-      padding: 1rem;
-      transition: transform 0.3s;
-    }
-
-    .service-card:hover {
-      transform: scale(1.05);
-    }
-
-    .service-card svg {
-      color: #877EFF;
-      font-size: 40px;
-      width: 40px;
-      height: 40px;
-    }
-
-    .section-title {
-      font-weight: bold;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .right-panel {
-      background-color: #F3F5FA;
-      border-radius: 15px;
-      padding: 1.5rem;
+    /* html, body {
+      display: grid;
+      height: 100%;
+      place-items: center;
       text-align: center;
+      background: #f2f2f2;
+    } */
+
+    .slider {
+      max-width: 660px; /* Width for two cards with spacing */
+      overflow: hidden;
+      position: relative;
     }
 
-    .right-panel .availability {
-      color: #6C757D;
+    .slider-wrapper {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .card {
+      min-width: 300px;
+      margin: 0 10px;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      flex: 1;
+    }
+
+    .card .img {
+      height: 200px;
+      width: 100%;
+    }
+
+    .card .img img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .card .content {
+      padding: 10px 20px;
+      text-align: left;
+    }
+
+    .title {
+      font-size: 25px;
+      font-weight: 600;
+    }
+
+    .sub-title {
+      font-size: 20px;
+      color: #e74c3c;
+      font-weight: 600;
+      line-height: 20px;
+    }
+
+    .card p {
+      text-align: justify;
+      margin: 10px 0;
       font-size: 0.9rem;
-      margin-bottom: 1rem;
+      line-height: 1.6;
     }
 
-    .right-panel .main-title {
-      font-weight: bold;
-      font-size: 2rem;
-      margin: 0.5rem 0;
+    .card .btn {
+      display: block;
+      margin-top: 10px;
     }
 
-    .right-panel .talk-link {
-      color: #877EFF;
-      font-size: 1rem;
-      text-decoration: underline;
+    .card .btn button {
+      background: #e74c3c;
+      color: #fff;
+      border: none;
+      outline: none;
+      font-size: 17px;
+      padding: 5px 8px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .card .btn button:hover {
+      transform: scale(0.9);
     }
   </style>
 </head>
-
 <body>
-  <div class="container services-container">
-    <div class="row">
-      <!-- Left Section: Services -->
-      <div class="col-lg-8">
-        <div class="section-title">Services</div>
-        <div class="row g-3">
-          <!-- Service Cards -->
-          <div class="col-md-6 col-lg-3">
-            <div class="service-card text-center">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                  d="M5 3h14a2 2 0 0 1 2 2v6H3V5a2 2 0 0 1 2-2zM3 11v8a2 2 0 0 0 2 2h6v-8H3zm8 0v8h6a2 2 0 0 0 2-2v-6h-8z">
-                </path>
-              </svg>
-              <p class="mt-2 fw-bold">Web Development</p>
+    <div class="container profile-card">
+        <nav class="navbar navbar-expand-lg navbar-light  shadow-sm btn my-3  p-4 mb-3   mainborder">
+            <div class="container-fluid ">
+                <a class="navbar-brand" href="#"><img src="./Image/creativehand_text_logo-removebg-preview (1).png"
+                        alt="" class="navbarlogo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarNav">
+                    <ul class="navbar-nav m-auto towgap">
+
+                        <li class="nav-item air d-flex align-items-center ">
+                            <a class="  text-decoration-none  nav-link displanonoe " aria-current="page" href="#"> <img
+                                    src="./Image/creativehand_text_logo-removebg-preview (1).png" alt="" class="sizebg">
+
+                            </a>
+                        </li>
+                        <li class="nav-item air d-flex align-items-center ">
+                            <svg _ngcontent-ng-c2032597578="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="1.2" class="
+                -[#8991A7] transition group-hover:text-dark group-[.active]/menu-item:text-dark dark:group-hover:text-white
+                 dark:group-[.active]/menu-item:text-white">
+                                <path _ngcontent-ng-c2032597578="" d="M15.833 7.258 11.39 3.802a2.222 2.222 0 0 0-2.728 0L4.216 7.258a2.22 2.22 0 0 
+                  0-.858 1.754v6a1.667 1.667 0 0 0 1.667 1.667h10a1.667 1.667 0 0 0 1.667-1.666v-6c0-.
+                  686-.317-1.334-.859-1.755Z"></path>
+                                <path _ngcontent-ng-c2032597578="" d="M13.333 12.
+                  5c-1.841 1.11-4.826 1.11-6.667 0"></path>
+                            </svg> <a class="  text-decoration-none nav-link " aria-current="page" href="#"><b>Home</b>
+                            </a>
+                        </li>
+                        <li class="nav-item air d-flex align-items-center ">
+                            <svg _ngcontent-ng-c2032597578="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="1.2" class="text-[#8991A7] transition group-hover:text-dark group-[.active]/menu-item:text-dark dark:group-hover:text-white
+                  dark:group-[.active]/menu-item:text-white">
+                                <path _ngcontent-ng-c2032597578=""
+                                    d="M10.5 10.833a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"></path>
+                                <path _ngcontent-ng-c2032597578=""
+                                    d="M10.5 2.5c6 0 7.5 1.5 7.5 7.5s-1.5 7.5-7.5 7.5S3 16 3 10s1.5-7.5 7.5-7.5Z">
+                                </path>
+                                <path _ngcontent-ng-c2032597578="" d="M5.5 16.708v-.041a3.333 3.333 0 0 1 
+                  3.333-3.334h3.334a3.333 3.333 0 0 1 3.333 3.334v.041"></path>
+                            </svg> <a class="text-decoration-none   nav-link" href="#">
+                                <b>About</b></a>
+                        </li>
+                        <li class="nav-item air d-flex align-items-center  ">
+                            <svg _ngcontent-ng-c2032597578="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                fill="none" stroke="currentColor
+                " stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" class="text-[#8991A7] transition grou
+                p-hover:text-dark group-[.active]/menu-item:text-dark dark:group-hover:text-white dark:group-[.active]/menu-item:
+                ">
+                                <path _ngcontent-ng-c2032597578=""
+                                    d="M10.5 3.333 3.833 6.667 10.5 10l6.667-3.333L10.5 3.333ZM3.833 10l6.667 3.333L17.167 10M3.833 13.333l6.667 3.334 6.667-3.334">
+                                </path>
+                            </svg> <a class="text-decoration-none  nav-link" href="#">
+                                <b>Services</b></a>
+
+                        </li>
+                        <li class="nav-item air d-flex align-items-center ">
+                            <svg _ngcontent-ng-c2032597578="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="1.2"
+                                class="h-6 w-6 text-[#8991A7] transition group-hover:text-dark group-[.active]/menu-item:text-dark dark:group-hover:text-white dark:group-[.active]/menu-item:text-white">
+                                <path _ngcontent-ng-c2032597578=""
+                                    d="m3.503 5.998 5.949-2.591a.8.8 0 0 1 1.058.439l4.103 9.918a.834.834 0 0 1-.428 1.087l-5.948 2.59a.8.8 0 0 1-1.059-.438l-4.103-9.92a.833.833 0 0 1 .428-1.085ZM13 3.333h.833a.833.833 0 0 1 .834.834v2.916M17.167 5c.22.093.433.18.64.263a.833.833 0 0 1 .442 1.092l-1.915 4.478">
+                                </path>
+                            </svg> <a class="text-decoration-none  nav-link" href="#">
+                                <b>Works</b> </a>
+                        </li>
+                        <li class="nav-item air d-flex align-items-center ">
+                            <svg _ngcontent-ng-c2032597578="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="1.2" class="">
+                                <path _ngcontent-ng-c2032597578=""
+                                    d="m14.667 9.167 1.25-1.25a2.357 2.357 0 1 0-3.333-3.334l-8.75 8.75v3.334h3.333L8.834 15m2.916-9.583 3.333 3.333m.417 9.583 2.792-2.736a1.785 1.785 0 0 0 .004-2.56 1.87 1.87 0 0 0-2.608-.005l-.186.184-.186-.184a1.869 1.869 0 0 0-2.607-.005 1.787 1.787 0 0 0-.005 2.56l2.796 2.746Z ">
+                                </path>
+                            </svg> <a class="text-decoration-none  nav-link" href="#">
+                                <b>Blog</b> </a>
+                        </li>
+                        <li class="nav-item d-flex align-items-center rounded air">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none"
+                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2">
+                                <path
+                                    d="M6.667 7.5h6.666m-6.666 3.333h5M15 3.333a2.5 2.5 0 0 1 2.5 2.5V12.5A2.5 2.5 0 0 1 15 15h-4.167l-4.166 2.5V15H5a2.5 2.5 0 0 1-2.5-2.5V5.833a2.5 2.5 0 0 1 2.5-2.5h10Z">
+                                </path>
+                            </svg>
+                            <a class="text-decoration-none  nav-link" href="#">
+                                <b>Contact</b>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <div class="towgap  displaycouman ">
+
+                        <button class="air moones" id="darkModeToggle">
+                            <i class="fa-solid fa-moon sun" id="darkModeIcon"></i>
+                        </button>
+
+
+                        <button type="button" class="btn btn-dark ">
+                            <i class="fa-solid fa-download"></i>Resume
+                        </button>
+                    </div>
+                </div>
+        </nav>
+
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4 d-flex justify-content-center textcolores  my-3  ">
+                    <div class="card profile-card p-c text-start p-4 backgroundcolors btn mainborder">
+                        <div class="profile-img mb-3 mainborder">
+                            <img src="https://aashish-bhagwat.creativehand.co.in/assets/profile_landscape_ch.png"
+                                alt="Profile Image" class=" mainborder" style="width: -webkit-fill-available;" />
+                        </div>
+                        <h3 class="heading">Aashish Bhagwat 👋</h3>
+                        <div class="">
+                            <p class="paragraph ">
+                                A Passionate <strong class=" stongers">Full Stack Developer</strong> :computer:
+                                & <strong class=" stongers">Product Designer</strong> having
+                                <strong class=" stongers">7 years</strong> of Experiences in 20+ Technologies so
+                                far.
+                            </p>
+                        </div>
+                        <div class="d-flex justify-content-start my-3 textcolores imagetext ">
+                            <button class="btn  me-2 px-3 py-2  shadow rounded borderthreebtn  textcolores "
+                                style="background-color: rgb(135 126 255);">
+                                <i class="fa-solid fa-phone-volume"></i> Call
+                            </button>
+                            <button
+                                class="btn btn-outline-secondary air me-2 px-3 shadow rounded  py-2 borderthreebtn textcolores">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </button>
+                            <button
+                                class="btn btn-outline-secondary air px-3 shadow rounded py-2 d-flex align-items-center borderthreebtn textcolores">
+                                <i class="fa-regular fa-clone"></i> Email
+                            </button>
+                        </div>
+                        <div class=" mt-3">
+                            <button type="button" class="btn btn-white air shadow-sm text-dark mx-2">
+                                <i class="fa-brands fa-square-facebook social-links-icon"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-white air shadow-sm text-dark mx-2">
+                                <i class="fa-brands fa-instagram social-links-icon"></i>
+                            </button>
+                            <button type="button" class="btn btn-white air shadow-sm text-dark mx-2">
+                                <i class="fa-brands fa-github social-links-icon"></i>
+                            </button>
+                            <button type="button" class="btn btn-white air shadow-sm text-dark mx-2">
+                                <i class="fa-brands fa-linkedin-in social-links-icon"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-8 my-3 ">
+
+                    <div class="card mainborder profile-card p-4 btn ">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <p class="p-2 headincheck text-start">Services</p>
+                                <p class="p-2  text-start servicetext">Transforming Ideas into Innovative Reality,
+                                    Elevate Your
+                                    Vision with Our Expert <strong class="stongers">Product Design and Development
+                                    </strong> Services!</p>
+                            </div>
+                            <div class="">
+                                <button type="button"
+                                    class="btn btn-light imagetext d-flex align-items-center p-2 onegap alltextcoloroneway "><i
+                                        class="fa-solid sizefontcircle fa-circle"></i>Available For Hire</button>
+                            </div>
+                        </div>
+                        <div class=" row text-center">
+                            <div class="  col-lg-3 col-md-6 col-sm-6 mt-3 ">
+                                <div class="tex_img mainborder p-3  ">
+                                    <div class="imges   rounded ">
+                                        <div class="bg-white  mainborder p-4 ">
+                                            <svg _ngcontent-ng-c3685299408="" xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 64 64" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                class=" text-primary  " id="per"
+                                                style="color: rgb(135 126 255 ) !important;width: 3.5rem; ">
+                                                <path _ngcontent-ng-c3685299408=""
+                                                    d="M33.333 42.667H10.667A2.667 2.667 0 0 1 8 40V13.333a2.667 2.667 0 0 1 2.667-2.666h42.666A2.667 2.667 0 0 1 56 13.333v21.334M18.667 53.333h10.666M24 42.667v10.666M53.333 56l5.334-5.333-5.334-5.334m-8 0L40 50.667 45.333 56">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <p class="heading-text imagetext pt-1 " style="margin-bottom: 0px !important; 
+                         ">Web devlopment</p>
+
+                                </div>
+
+
+                            </div>
+                            <div class="  col-lg-3 col-md-6 col-sm-6 mt-3 ">
+                                <div class="tex_img mainborder p-3  ">
+                                    <div class="imges   rounded ">
+                                        <div class="bg-white  mainborder p-4 ">
+                                            <svg _ngcontent-ng-c1023900580="" xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 64 64" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                class="h-12 w-12 text-primary lg:h-16 lg:w-16" id="per"
+                                                style="color: rgb(135 126 255 ) !important;width: 3.5rem; ">
+                                                <path _ngcontent-ng-c1023900580=""
+                                                    d="M8 13.333A5.333 5.333 0 0 1 13.333 8h37.334A5.333 5.333 0 0 1 56 13.333v37.334A5.333 5.333 0 0 1 50.667 56H13.333A5.333 5.333 0 0 1 8 50.667V13.333ZM40 8 8 40M25.334 8l-16 16M53.333 9.333 38.667 24M24 40 10.666 53.333">
+                                                </path>
+                                                <path _ngcontent-ng-c1023900580="" d="M56 24H24v32"></path>
+                                            </svg>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <p class="heading-text imagetext pt-1 " style="margin-bottom: 0px !important; 
+                         "> UI UX Design </p>
+
+                                </div>
+
+
+                            </div>
+
+                            <div class="  col-lg-3 col-md-6 col-sm-6 mt-3 ">
+                                <div class="tex_img mainborder p-3  ">
+                                    <div class="imges   rounded ">
+                                        <div class="bg-white  mainborder p-4 ">
+                                            <svg _ngcontent-ng-c1023900580="" xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 64 64" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                class="h-12 w-12 text-primary lg:h-16 lg:w-16"
+                                                style="color: rgb(135 126 255 ) !important;width: 3.5rem; ">
+                                                <path _ngcontent-ng-c1023900580=""
+                                                    d="M26.666 18.667A5.333 5.333 0 0 1 32 13.333h16a5.333 5.333 0 0 1 5.333 5.334v26.666A5.333 5.333 0 0 1 48 50.667H32a5.333 5.333 0 0 1-5.334-5.334V18.667Zm-8 0v26.666m-8-24v21.334">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <p class="heading-text imagetext pt-1 " style="margin-bottom: 0px !important; 
+                         "> Mobile App </p>
+
+                                </div>
+
+
+                            </div>
+                            <div class="  col-lg-3 col-md-6 col-sm-6 mt-3 mb-3">
+                                <div class="tex_img mainborder p-3  ">
+                                    <div class="imges   rounded ">
+                                        <div class="bg-white  mainborder p-4 ">
+                                            <svg _ngcontent-ng-c1023900580="" xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 64 64" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                class="h-12 w-12 text-primary lg:h-16 lg:w-16"
+                                                style="color: rgb(135 126 255 ) !important;width: 3.5rem; ">
+                                                <path _ngcontent-ng-c1023900580=""
+                                                    d="M10.666 13.333a2.667 2.667 0 0 1 2.667-2.666h37.334a2.667 2.667 0 0 1 2.666 2.666v5.334a2.667 2.667 0 0 1-2.666 2.666H13.332a2.666 2.666 0 0 1-2.667-2.666v-5.334Zm0 21.334A2.667 2.667 0 0 1 13.333 32H24a2.667 2.667 0 0 1 2.666 2.667v16A2.667 2.667 0 0 1 24 53.333H13.333a2.666 2.666 0 0 1-2.667-2.666v-16ZM37.334 32h16m-16 10.667h16m-16 10.666h16">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <p class="heading-text imagetext pt-1 " style="margin-bottom: 0px !important; 
+                         ">Product Design</p>
+
+                                </div>
+
+
+                            </div>
+                            <div class="  col-lg-3 col-md-6 col-sm-6 mt-3 ">
+                                <div class="tex_img mainborder p-3  ">
+                                    <div class="imges   rounded ">
+                                        <div class="bg-white  mainborder p-4 ">
+                                            <svg _ngcontent-ng-c3685299408="" xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 64 64" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                class="h-12 w-12 text-primary lg:h-16 lg:w-16" id="per"
+                                                style="color: rgb(135 126 255 ) !important;width: 3.5rem; ">
+                                                <path _ngcontent-ng-c3685299408=""
+                                                    d="M36.214 36.773a15.982 15.982 0 0 1 1.12 5.894A15.86 15.86 0 0 1 32 54.56a15.814 15.814 0 0 1-10.666 4.107c-8.827 0-16-7.174-16-16 0-7.36 5.013-13.6 11.786-15.44">
+                                                </path>
+                                                <path _ngcontent-ng-c3685299408=""
+                                                    d="M46.88 27.227c6.773 1.84 11.787 8.08 11.787 15.44 0 8.826-7.174 16-16 16A15.814 15.814 0 0 1 32 54.56">
+                                                </path>
+                                                <path _ngcontent-ng-c3685299408=""
+                                                    d="M16 21.333a16 16 0 1 0 32 0 16 16 0 0 0-32 0Z"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <p class="heading-text imagetext pt-1 " style="margin-bottom: 0px !important; 
+                           ">Branding</p>
+
+                                </div>
+
+
+                            </div>
+                            <div class="  col-lg-3 col-md-6 col-sm-6 mt-3 ">
+                                <div class="tex_img mainborder p-3  ">
+                                    <div class="imges   rounded ">
+                                        <div class="bg-white  mainborder p-4 ">
+                                            <svg _ngcontent-ng-c3685299408="" xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 64 64" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                class="h-12 w-12 text-primary lg:h-16 lg:w-16" id="per"
+                                                style="color: rgb(135 126 255 ) !important;width: 3.5rem; ">
+                                                <path _ngcontent-ng-c3685299408=""
+                                                    d="M13.333 18.667H16a5.334 5.334 0 0 0 5.333-5.334A2.667 2.667 0 0 1 24 10.667h16a2.667 2.667 0 0 1 2.667 2.666A5.333 5.333 0 0 0 48 18.667h2.667A5.334 5.334 0 0 1 56 24v24a5.333 5.333 0 0 1-5.333 5.333H13.333A5.333 5.333 0 0 1 8 48V24a5.333 5.333 0 0 1 5.333-5.333Z">
+                                                </path>
+                                                <path _ngcontent-ng-c3685299408=""
+                                                    d="M24 34.667a8 8 0 1 0 16 0 8 8 0 0 0-16 0Z"></path>
+                                            </svg>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <p class="heading-text imagetext pt-1 " style="margin-bottom: 0px !important; 
+                           "> Video Editing </p>
+
+                                </div>
+
+
+                            </div>
+
+                            <div class="  col-lg-3 col-md-6 col-sm-6 mt-3 ">
+                                <div class="tex_img mainborder p-3  ">
+                                    <div class="imges   rounded ">
+                                        <div class="bg-white  mainborder p-4 ">
+                                            <svg _ngcontent-ng-c3685299408="" xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 64 64" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                class="h-12 w-12 text-primary lg:h-16 lg:w-16" id="per"
+                                                style="color: rgb(135 126 255 ) !important;width: 3.5rem; ">
+                                                <path _ngcontent-ng-c3685299408=""
+                                                    d="m49.621 47.333-10.4.715h-.072a36.88 36.88 0 0 0-9.925 2.208l-6.696 2.421a10.962 10.962 0 0 1-8.765-.576 10.188 10.188 0 0 1-5.28-6.738l-3.67-16.134a9.784 9.784 0 0 1 1.43-7.626 10.57 10.57 0 0 1 6.637-4.43l30-6.277c5.699-1.195 11.325 2.267 12.568 7.733l3.741 16.432a9.806 9.806 0 0 1-1.858 8.23 10.686 10.686 0 0 1-7.707 4.032v.005l-.003.005Z">
+                                                </path>
+                                                <path _ngcontent-ng-c3685299408=""
+                                                    d="M24 26.667 27.221 40l11.446-10.667L24 26.667Z"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <p class="heading-text imagetext pt-1 " style="margin-bottom: 0px !important; 
+                           "> Logo Design</p>
+
+                                </div>
+
+
+                            </div>
+                            <div class="  col-lg-3 col-md-6 col-sm-6 mt-3 mb-3">
+                                <div class="tex_img mainborder p-3  ">
+                                    <div class="imges   rounded ">
+                                        <div class="bg-white  mainborder p-4 ">
+                                            <svg _ngcontent-ng-c3685299408="" xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 64 64" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                class="h-12 w-12 text-primary lg:h-16 lg:w-16" id="per"
+                                                style="color: rgb(135 126 255 ) !important;width: 3.5rem; ">
+                                                <path _ngcontent-ng-c3685299408=""
+                                                    d="M26.667 32a5.333 5.333 0 1 0 10.666 0 5.333 5.333 0 0 0-10.666 0Z">
+                                                </path>
+                                                <path _ngcontent-ng-c3685299408=""
+                                                    d="M56 32c-6.4 10.667-14.4 16-24 16S14.4 42.667 8 32c6.4-10.667 14.4-16 24-16s17.6 5.333 24 16Z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <p class="heading-text imagetext pt-1 " style="margin-bottom: 0px !important; 
+                           ">Visualization</p>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div>
+                            <p class=" text-start mt-3 work20plusheading">Worked In 20+ Technologies ✨ So Far</p>
+                        </div>
+                        <div class="row text-center justify-content-center mt-3">
+                            <!-- Skill 1 -->
+                            <div class=" col-lg-1 col-md-2 col-sm-2  ">
+                                <div class="skill-card   py-3 brdoerthreebtn d-flex justify-content-center ">
+                                    <img src="./Image/dd1100.svg" class="picsmall" alt="Angular Logo">
+
+                                </div>
+                                <p class="imagetext">Angular</p>
+                            </div>
+
+                            <!-- Skill 2 -->
+                            <div class=" col-lg-1 col-md-2 col-sm-2 ">
+                                <div class="skill-card py-3 brdoerthreebtn d-flex justify-content-center ">
+                                    <img src="./Image/61DAFB.svg" class="picsmall" alt="React Logo">
+
+                                </div>
+                                <p class="imagetext">React Js</p>
+                            </div>
+
+                            <!-- Skill 3 -->
+                            <div class=" col-lg-1 col-md-2 col-sm-2">
+                                <div class="skill-card  py-3 brdoerthreebtn d-flex justify-content-center">
+                                    <img src="./Image/5FA04E.svg" class="picsmall" alt="Node JS Logo">
+
+                                </div>
+                                <p class="imagetext">Node Js</p>
+                            </div>
+
+                            <!-- Skill 4 -->
+                            <div class=" col-lg-1 col-md-2 col-sm-2">
+                                <div class="skill-card  py-3 brdoerthreebtn d-flex justify-content-center ">
+                                    <img src="./Image/FEC119.svg" class="picsmall" alt="Javascript Logo">
+                                </div>
+                                <p class="imagetext">Javascript</p>
+
+                            </div>
+
+                            <!-- Skill 5 -->
+                            <div class=" col-lg-1 col-md-2 col-sm-2">
+                                <div class="skill-card  py-3 brdoerthreebtn d-flex justify-content-center">
+                                    <img src="./Image/FF2D20.svg" class="picsmall" alt="Laravel Logo">
+                                </div>
+                                <p class="imagetext">Laravel</p>
+
+                            </div>
+
+                            <!-- Skill 6 -->
+                            <div class=" col-lg-1 col-md-2 col-sm-2  ">
+                                <div class="skill-card py-3 brdoerthreebtn d-flex justify-content-center ">
+                                    <img src="./Image/3880FF.svg" class="picsmall" alt="Laravel Logo">
+                                </div>
+                                <p class="imagetext">Ionic</p>
+
+                            </div>
+
+                            <!-- Skill 7 -->
+                            <div class=" col-lg-1 col-md-2 col-sm-2">
+                                <div class="skill-card py-3 brdoerthreebtn d-flex justify-content-center">
+                                    <img src="./Image/000000.svg" class="picsmall" alt="Github Logo">
+                                </div>
+                                <p class="imagetext">Github</p>
+
+                            </div>
+
+                            <!-- Skill 8 -->
+                            <div class=" col-lg-1 col-md-2 col-sm-2">
+                                <div class="skill-card py-3 brdoerthreebtn d-flex justify-content-center ">
+                                    <img src="./Image/E34F26.svg" class="picsmall" alt="HTML Logo">
+                                </div>
+                                <p class="imagetext">HTML</p>
+
+                            </div>
+
+                            <!-- Skill 9 -->
+                            <div class=" col-lg-1 col-md-2 col-sm-2
+                            ">
+                                <div class="skill-card py-3 brdoerthreebtn d-flex justify-content-center">
+                                    <img src="./Image/1572B6.svg" class="picsmall" alt="CSS Logo">
+                                </div>
+                                <p class="imagetext">CSS</p>
+
+                            </div>
+
+                            <!-- Skill 10 -->
+                            <div class=" col-lg-1 col-md-2 col-sm-2">
+                                <div class="skill-card py-3 brdoerthreebtn d-flex justify-content-center ">
+                                    <img src="./Image/0769AD.svg" class="picsmall" alt="JQuery Logo">
+                                </div>
+                                <p class="imagetext">JQuery</p>
+
+                            </div>
+
+                            <!-- Skill 11 -->
+                            <div class=" col-lg-1 col-md-2 col-sm-2">
+                                <div class="skill-card py-3 brdoerthreebtn d-flex justify-content-center ">
+                                    <img src="./Image/47A248.svg" class="picsmall" alt="Mongo DB Logo">
+                                </div>
+                                <p class="imagetext">Mongo DB</p>
+
+                            </div>
+
+                            <!-- Skill 12 -->
+                            <div class="col-lg-1 col-md-2 col-sm-2">
+                                <div class="skill-card py-3 brdoerthreebtn d-flex justify-content-center ">
+                                    <img src="./Image/009639.svg" class="picsmall" alt="NGINX Logo">
+                                </div>
+                                <p class="imagetext">NGINX</p>
+
+                            </div>
+
+                            <!-- Skill 13 -->
+                            <div class=" col-lg-1 col-md-2 col-sm-2">
+                                <div class="skill-card py-3 brdoerthreebtn d-flex justify-content-center ">
+                                    <img src="./Image/5A0FC8.svg" class="picsmall" alt="PWA Logo">
+                                </div>
+                                <p class="imagetext">PWA</p>
+
+                            </div>
+
+                            <!-- Skill 14 -->
+                            <div class=" col-lg-1 col-md-2 col-sm-2">
+                                <div class="skill-card py-3 brdoerthreebtn d-flex justify-content-center ">
+                                    <img src="./Image/21759B.svg" class="picsmall" alt="Wordpress Logo">
+                                </div>
+                                <p class="imagetext">Wordpress</p>
+
+                            </div>
+
+                            <!-- Skill 15 -->
+
+                        </div>
+                        <div class="slider-container overflow-hidden">
+                            <div class=" slider-wrapper d-flex row justify-content-between text-start ">
+                                <div class="evryer  col-lg-6  p-3">
+                                    <div class="card p-3 ">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="stars d-flex text-warning  "><i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <div><button type="button" class="btn bg-light " style="font-size: small;">Primary</button></div>
+                                        </div>
+                                      
+                                       
+                                        <p class="pt-3">Aashish created a powerful betting application for us. His technical skills and
+                                            dedication were key to the project’s success.</p>
+                                        <p class="pt-3"><strong>Dubai Client</strong> - Founder, Betting Application</p>
+                                    </div>
+    
+                                </div>
+                                <div class="evryer  col-lg-6  p-3">
+                                    <div class="card p-3 ">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="stars d-flex text-warning  "><i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <div><button type="button" class="btn bg-light " style="font-size: small;">Primary</button></div>
+                                        </div>
+                                      
+                                       
+                                        <p class="pt-3">Aashish created a powerful betting application for us. His technical skills and
+                                            dedication were key to the project’s success.</p>
+                                        <p class="pt-3"><strong>Dubai Client</strong> - Founder, Betting Application</p>
+                                    </div>
+    
+                                </div>
+                                <div class="evryer  col-lg-6  p-3">
+                                    <div class="card p-3 ">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="stars d-flex text-warning  "><i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <div><button type="button" class="btn bg-light " style="font-size: small;">Primary</button></div>
+                                        </div>
+                                      
+                                       
+                                        <p class="pt-3">Aashish created a powerful betting application for us. His technical skills and
+                                            dedication were key to the project’s success.</p>
+                                        <p class="pt-3"><strong>Dubai Client</strong> - Founder, Betting Application</p>
+                                    </div>
+    
+                                </div>
+                                <div class="evryer  col-lg-6  p-3">
+                                    <div class="card p-3 ">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="stars d-flex text-warning  "><i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <div><button type="button" class="btn bg-light " style="font-size: small;">Primary</button></div>
+                                        </div>
+                                      
+                                       
+                                        <p class="pt-3">Aashish created a powerful betting application for us. His technical skills and
+                                            dedication were key to the project’s success.</p>
+                                        <p class="pt-3"><strong>Dubai Client</strong> - Founder, Betting Application</p>
+                                    </div>
+    
+                                </div>
+                                <div class="evryer   col-lg-6 p-3">
+                                    <div class="card p-3 ">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="stars d-flex text-warning  "><i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <div><button type="button" class="btn bg-light " style="font-size: small;">Primary</button></div>
+                                        </div>
+                                        <p class="pt-3">Aashish created a powerful betting application for us. His technical skills and
+                                            dedication were key to the project’s success.</p>
+                                        <p class="pt-3"><strong>Dubai Client</strong> - Founder, Betting Application</p>
+                                    </div>
+    
+                                </div>
+                            </div>
+                        </div>
+                        
+
+
+
+
+
+
+
+                    </div>
+
+
+                </div>
+           
+
+
             </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="service-card text-center">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M3 3h18v2H3zm0 4h18v2H3zm0 4h18v2H3zm0 4h18v2H3z"></path>
-              </svg>
-              <p class="mt-2 fw-bold">UI UX Design</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="service-card text-center">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M7 4h10l1.5 3H17v13h-2V7H9v13H7V7H6l1.5-3zm3 6h4v8h-4v-8z"></path>
-              </svg>
-              <p class="mt-2 fw-bold">Mobile App</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="service-card text-center">
-              <div></div>
-              <svg _ngcontent-ng-c1023900580="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none"
-                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                class="h-12 w-12 text-primary lg:h-16 lg:w-16">
-                <path _ngcontent-ng-c1023900580=""
-                  d="M10.666 13.333a2.667 2.667 0 0 1 2.667-2.666h37.334a2.667 2.667 0 0 1 2.666 2.666v5.334a2.667 2.667 0 0 1-2.666 2.666H13.332a2.666 2.666 0 0 1-2.667-2.666v-5.334Zm0 21.334A2.667 2.667 0 0 1 13.333 32H24a2.667 2.667 0 0 1 2.666 2.667v16A2.667 2.667 0 0 1 24 53.333H13.333a2.666 2.666 0 0 1-2.667-2.666v-16ZM37.334 32h16m-16 10.667h16m-16 10.666h16">
-                </path>
-              </svg>
-              <p class="mt-2 fw-bold">Product Design</p>
-            </div>
-          </div>
-          <!-- "See All Services" link -->
-          <div class="text-end mt-3">
-            <a href="#" class="text-decoration-none text-primary">See All Services →</a>
+
+        </div>
+    </div>
+  <div class="slider">
+    <div class="slider-wrapper">
+      <!-- Original cards -->
+      <div class="card">
+        <div class="img">
+          <img src="#" alt="">
+        </div>
+        <div class="content">
+          <div class="title">Briana Tozour</div>
+          <div class="sub-title">Graphic Designer</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.</p>
+          <div class="btn">
+            <button>Read more</button>
           </div>
         </div>
       </div>
-      <!-- Right Section: Call to Action -->
-      <div class="col-lg-4 mt-4 mt-lg-0">
-        <div class="right-panel">
-          <p class="availability">Available For Hire 🚀 Crafting Solutions</p>
-          <h2 class="main-title">Let's 👋 Work Together</h2>
-          <a href="#" class="talk-link">Let's Talk →</a>
+      <div class="card">
+        <div class="img">
+          <img src="#" alt="">
+        </div>
+        <div class="content">
+          <div class="title">Pricilla Preez</div>
+          <div class="sub-title">Web Developer</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.</p>
+          <div class="btn">
+            <button>Read more</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="img">
+          <img src="#" alt="">
+        </div>
+        <div class="content">
+          <div class="title">Eliana Maia</div>
+          <div class="sub-title">App Developer</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.</p>
+          <div class="btn">
+            <button>Read more</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-</body>
 
+  <!-- JavaScript for continuous sliding -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('#navbarNav');
+  
+    // Close the navbar when clicking outside
+    document.addEventListener('click', function (event) {
+      const isClickInsideNavbar = navbarCollapse.contains(event.target) || navbarToggler.contains(event.target);
+  
+      if (!isClickInsideNavbar && navbarCollapse.classList.contains('show')) {
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+          toggle: false
+        });
+        bsCollapse.hide();
+      }
+    });
+  });
+  const images = document.querySelectorAll('.image-to-open');
+  const icons = document.querySelectorAll('.hover-icon');
+  
+  icons.forEach((icon, index) => {
+    icon.addEventListener('click', () => {
+      const imageUrl = images[index].src;
+      // Open image in a new tab in fullscreen
+      window.open(imageUrl, '_blank').focus();
+    });
+  });
+  
+    const sliderWrapper = document.querySelector('.slider-wrapper');
+    const cardWidth = document.querySelector('.card').offsetWidth + 20; // card width + margin
+    let currentPosition = 0;
+
+    function slideCards() {
+      sliderWrapper.style.transition = "transform 0.5s ease";
+      sliderWrapper.style.transform = `translateX(-${cardWidth}px)`;
+
+      setTimeout(() => {
+        sliderWrapper.appendChild(sliderWrapper.firstElementChild);
+        sliderWrapper.style.transition = "none";
+        sliderWrapper.style.transform = "translateX(0)";
+      }, 500); // Time matches the transition duration
+    }
+
+    setInterval(slideCards, 2000);
+  </script>
+
+</body>
 </html>
