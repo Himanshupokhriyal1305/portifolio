@@ -488,11 +488,7 @@
         width: 14%;
     }
 }
-.work20plusheading{
-    font-size: clamp(0rem,4vw,2rem);
-    font-weight: 700;
 
-}
 .card-container {
     display: flex;
     gap: 20px;
