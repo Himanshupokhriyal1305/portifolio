@@ -591,3 +591,25 @@ align-items: center;
 .Award:hover{
   background-color: white;
 }
+.servicetextpargaone{
+  font-size: clamp(17px, 2vw, 13px);
+}
+.w4 img{
+  height: 45vh !important;
+  width: 100%;
+}
+.textchange:hover{
+  color: white !important;
+   background-color: rgba(20, 31, 236, 0.33) !important;
+}
+.bgchange:hover{
+border: 1px sliod black;
+ background-color: white !important;
+}
+.Hchange:hover{
+color: rgba(10, 20, 228, 0.649) !important;
+}
+.btnchange button:hover{
+color: white !important;
+ background-color: rgba(20, 31, 236, 0.33) !important;
+}
