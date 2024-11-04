@@ -398,7 +398,7 @@
       background-color: #191923 !important;
     }
     .heading{
-      font-size: clamp(1rem, 2vw, 1.5rem);
+      font-size: clamp(1.5rem, 2vw, 1.5rem);
       font-weight: 700;
     }
     .fontweight{

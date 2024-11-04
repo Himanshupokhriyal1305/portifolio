@@ -401,7 +401,7 @@
       background-color: #191923 !important;
     }
     .heading{
-      font-size: clamp(1rem, 2vw, 1.5rem);
+      font-size: clamp(1.5rem, 2vw, 1.5rem);
       font-weight: 700;
     }
     .fontweight{
@@ -742,4 +742,11 @@
     height: 24px;
     margin-right: 5px;
 }
-    
+@media (min-width: 768px) {
+
+}
+.work20plusheading{
+  font-size: clamp(1.2rem,4vw,2rem);
+  font-weight: 700;
+
+}

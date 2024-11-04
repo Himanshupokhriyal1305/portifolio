@@ -398,7 +398,7 @@
       background-color: #191923 !important;
     }
     .heading{
-      font-size: clamp(1rem, 2vw, 1.5rem);
+      font-size: clamp(1.5rem, 2vw, 1.5rem);
       font-weight: 700;
     }
     .fontweight{
@@ -489,7 +489,7 @@
       }
   }
   .work20plusheading{
-      font-size: clamp(0rem,4vw,2rem);
+      font-size: clamp(1.5rem,4vw,2rem);
       font-weight: 700;
   
   }
@@ -612,4 +612,9 @@
 .btnchange button:hover{
   color: white !important;
    background-color: rgba(20, 31, 236, 0.33) !important;
+}
+@media (max-width:412px) {
+  .txtmedia{
+font-size: small !important;
+  }
 }
