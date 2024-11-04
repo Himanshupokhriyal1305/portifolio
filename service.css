@@ -493,108 +493,6 @@
     font-weight: 700;
 
 }
-.card-container {
-    display: flex;
-    gap: 20px;
-    padding: 20px;
-    animation: rotateCards 5s infinite linear;
-    justify-content: center;
-    align-items: center;
-}
-
-
-/* CSS Styles */
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-} */
-
-/* html, body {
-  display: grid;
-  height: 100%;
-  place-items: center;
-  text-align: center;
-  background: #f2f2f2;
-} */
-
-.slider {
-  max-width: 660px; /* Width for two cards with spacing */
-  overflow: hidden;
-  position: relative;
-}
-
-.slider-wrapper {
-  display: flex;
-  transition: transform 0.5s ease;
-}
-
-.card {
-  min-width: 310px;
-  margin: 0 10px;
-  /* background: #fff; */
-  /* border-radius: 10px; */
-  overflow: hidden;
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-  flex: 1;
-}
-
-.card .img {
-  height: 200px;
-  width: 100%;
-}
-
-.card .img img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-.card .content {
-  padding: 10px 20px;
-  text-align: left;
-}
-
-.title {
-  font-size: 25px;
-  font-weight: 600;
-}
-
-.sub-title {
-  background-color: #fff;
-  color: rgb(135 126 255 );
-  padding: 5px;
-  
-}
-
-/* .card p {
-  text-align: justify;
-  margin: 10px 0;
-  font-size: 0.9rem;
-  line-height: 1.6;
-} */
-
-/* .card .btn {
-  display: block;
-  margin-top: 10px;
-} */
-
-/* .card .btn button {
-  background: #e74c3c;
-  color: #fff;
-  border: none;
-  outline: none;
-  font-size: 17px;
-  padding: 5px 8px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.2s;
-} */
-
-.card .btn button:hover {
-  transform: scale(0.9);
-}
 .dark-mode .fa-sun {
   color: red;
 }
@@ -660,8 +558,17 @@
 
 }
 @media (max-width : 992px) {
-  .servicesdisplay{
+  .servicesdisplayone{
     flex-direction: column-reverse;
+    width: fit-content;
+  }
+
+  
+}
+@media (max-width : 992px) {
+  .servicesdisplay{
+    flex-direction: inherit;
+    width: fit-content;
   }
 
   
@@ -671,3 +578,16 @@
   border-radius: 5px;
 }
 
+.cardsliderpara{
+  font-size: clamp(13px, 2vw, 10px);
+}
+.Award{
+  background-color: #F4F1F1;
+  border-radius: 20px;
+  padding: 10px;
+display: flex;
+align-items: center;
+}
+.Award:hover{
+  background-color: white;
+}
